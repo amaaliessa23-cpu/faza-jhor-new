@@ -1,0 +1,19 @@
+{
+  "name": "fazaa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('Static site build complete')\""
+  },
+  "dependencies": {
+    "archiver": "^8.0.0",
+    "express": "^4.21.2",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@babel/standalone": "^7.29.9"
+  }
+}
